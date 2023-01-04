@@ -1,0 +1,25 @@
+﻿@model MVCIdentity.Models.UserModel.LoginModel
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2>Login</h2>
+@Html.ValidationSummary()
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <input  type="hidden"name="returnUrl" value="@ViewBag.returnUrl"/>
+    <div class="form-group">
+        <label>UserName</label>
+        @Html.TextBoxFor(j => j.UserName, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        <label>Password</label>
+        @Html.TextBoxFor(j => j.Password, new { @class = "form-control",@type="password" })
+    </div>
+
+    <button type="submit" class="btn btn-primary">Giriş Yap</button>
+
+}
+

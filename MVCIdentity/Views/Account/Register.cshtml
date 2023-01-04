@@ -1,0 +1,30 @@
+﻿@model MVCIdentity.Models.UserModel.Register
+@{
+    ViewBag.Title = "Register";
+}
+
+<h2>Register</h2>
+
+@Html.ValidationSummary()
+@using (Html.BeginForm()) {
+                @Html.AntiForgeryToken()
+
+<div class="form-group">
+    <label>UserName</label>
+    @Html.TextBoxFor(j=>j.UserName,new {@class="form-control" })
+</div>
+
+<div class="form-group">
+    <label>Email</label>
+    @Html.TextBoxFor(j => j.Email, new { @class = "form-control" })
+</div>
+
+<div class="form-group">
+    <label>Password</label>
+    @Html.TextBoxFor(j => j.Password, new { @class = "form-control" })
+</div>
+
+<button type="submit" class="btn btn-primary">Kayıt Ol</button>
+
+}
+

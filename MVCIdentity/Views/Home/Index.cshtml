@@ -1,0 +1,16 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<h2>@User.Identity.Name</h2>
+<hr />
+
+@if (User.Identity.IsAuthenticated)
+{
+    <a href="/Account/Logout/" class="btn btn-danger">Çıkış Yap</a>
+}
+else
+{
+    <a href="/Account/Login/" class="btn btn-danger">Giriş Yap</a>
+    <a href="/Account/Register/" class="btn btn-danger">Kayıt Ol</a>
+}

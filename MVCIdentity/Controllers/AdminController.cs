@@ -9,6 +9,7 @@ using System.Web.Mvc;
 
 namespace MVCIdentity.Controllers
 {
+    [Authorize(Roles ="Admin")]
     public class AdminController : Controller
     {
         private UserManager<AppUser> userManager;

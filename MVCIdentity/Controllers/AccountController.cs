@@ -11,9 +11,11 @@ using static MVCIdentity.Models.UserModel;
 
 namespace MVCIdentity.Controllers
 {
-    [Authorize]
+  
+
     public class AccountController : Controller
     {
+        
         
         private UserManager<AppUser> userManager;
 
@@ -101,7 +103,7 @@ namespace MVCIdentity.Controllers
                 var result=userManager.Create(user,model.Password);
                 if (result.Succeeded)
                 {
-                  //  userManager.AddToRole(user.Id, "User");//İlk kayıtta rol atama
+                  userManager.AddToRole(user.Id, "User");//İlk kayıtta rol atama
                     return RedirectToAction("Login");
                 }
                 else
